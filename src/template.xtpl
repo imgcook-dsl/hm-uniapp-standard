@@ -1,13 +1,14 @@
-'use strict';
+<template>
+    <view :id="dataId">
+    {{{template}}}
+    </view>
+</template>
 
-import { createElement, Component, render } from 'rax';
+<script>
+    {{{mockDataScript}}}
+    {{{script}}}
+</script>
 
-{{{import}}}
-
-{{{style}}}
-
-{{{mockData}}}
-
-{{{modClass}}}
-
-{{{export}}}
+<style lang="less" scoped>
+    {{{style}}}
+</style>
