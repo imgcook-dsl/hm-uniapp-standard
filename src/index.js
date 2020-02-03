@@ -92,11 +92,11 @@ module.exports = function(schema, option) {
           value = (parseInt(value)).toFixed(2);
           value = value == 0 ? value : value + 'px';
         }
-        styleData.push(`${_.kebabCase(key)}: ${value}`);
+        styleData.push(`${_.camelCase(key)}: ${value}`);
       } else if (noUnitStyles.indexOf(key) != -1) {
-        styleData.push(`${_.kebabCase(key)}: ${parseFloat(value)}`);
+        styleData.push(`${_.camelCase(key)}: ${parseFloat(value)}`);
       } else {
-        styleData.push(`${_.kebabCase(key)}: ${value}`);
+        styleData.push(`${_.camelCase(key)}: ${value}`);
       }
     }
     return styleData.join(';');
