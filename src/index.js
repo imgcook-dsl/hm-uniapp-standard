@@ -87,16 +87,16 @@ module.exports = function(schema, option) {
       if (boxStyleList.indexOf(key) != -1) {
         if (toVW) {
           value = (parseInt(value) / _w).toFixed(2);
-          value = value == 0 ? value : value + 'vw';
+          value = value == 0 ? value : value + 'rpx';
         } else {
           value = (parseInt(value)).toFixed(2);
           value = value == 0 ? value : value + 'px';
         }
-        styleData.push(`${_.camelCase(key)}: ${value}`);
+        styleData.push(`${_.kebabCase(key)}: ${value}`);
       } else if (noUnitStyles.indexOf(key) != -1) {
-        styleData.push(`${_.camelCase(key)}: ${parseFloat(value)}`);
+        styleData.push(`${_.kebabCase(key)}: ${parseFloat(value)}`);
       } else {
-        styleData.push(`${_.camelCase(key)}: ${value}`);
+        styleData.push(`${_.kebabCase(key)}: ${value}`);
       }
     }
     return styleData.join(';');
@@ -394,6 +394,26 @@ module.exports = function(schema, option) {
     singleQuote: true
   };
 
+  // /**
+  //  * @TODO: 将css转为uni-app的css
+  //  * @param {*} css 
+  //  */
+  // const transformCssToBeUniApp = (css) => {
+  //   console.log('css: ', css);
+  //   let styles = boxStyleList.concat(noUnitStyles);
+  //   console.log('styles: ', styles);
+  //   styles.forEach(style => {
+  //     let kebabCaseStyle = _.kebabCase(style);
+  //     console.log(`kebabCaseStyle: `, kebabCaseStyle);
+  //     if (kebabCaseStyle.indexOf('-') > 0) {
+  //       let re = new RegExp(kebabCaseStyle, 'gm');
+  //       console.log('camelCaseStyle: ', _.camelCase(style));
+  //       css = css.replace(re, _.camelCase(style));
+  //     }
+  //   })
+  //   return css;
+  // };
+
   return {
     panelDisplay: [
       {
@@ -405,6 +425,20 @@ module.exports = function(schema, option) {
           <script>
             ${imports.join('\n')}
             export default {
+              name: 'HmUniAppComponent',
+              props: {
+                dataId: {
+                  type: String,
+                  default: "hm-uni-app-component"
+                },
+                options: {
+                  type: Object,
+                  default: function() {
+                    return {
+                    }
+                  }
+                }
+              },
               data() {
                 return {
                   ${datas.join(',\n')}

@@ -3,7 +3,7 @@
   flex-direction: row;
   justify-content: space-around;
   align-items: flex-start;
-  height: 71.2vw;
+  height: 71.2rpx;
 }
 
 .bd {
@@ -12,16 +12,16 @@
   align-items: flex-start;
   flex-direction: row;
   opacity: 1;
-  width: 45.6vw;
-  height: 45.6vw;
+  width: 45.6rpx;
+  height: 45.6rpx;
 }
 
 .layer {
   position: absolute;
   top: 0;
   left: 0;
-  width: 45.6vw;
-  height: 45.6vw;
+  width: 45.6rpx;
+  height: 45.6rpx;
   overflow: hidden;
 }
 
@@ -30,40 +30,40 @@
   top: 0;
   left: 0;
   opacity: 1;
-  width: 45.6vw;
-  height: 45.6vw;
+  width: 45.6rpx;
+  height: 45.6rpx;
 }
 
 .wrap {
   box-sizing: border-box;
   display: flex;
   position: absolute;
-  top: 2.4vw;
-  left: 2.4vw;
+  top: 2.4rpx;
+  left: 2.4rpx;
   align-items: center;
   flex-direction: row;
-  border-radius: 2vw;
+  borderRadius: 2rpx;
   background-color: rgba(0, 0, 0, 0.4);
-  padding-right: 1.2vw;
-  padding-left: 1.33vw;
-  height: 4vw;
+  paddingRight: 1.2rpx;
+  paddingLeft: 1.33rpx;
+  height: 4rpx;
 }
 
 .riverdinwei {
   opacity: 1;
-  width: 1.87vw;
-  height: 2.4vw;
+  width: 1.87rpx;
+  height: 2.4rpx;
 }
 
 .distance {
-  margin-left: 0.53vw;
-  width: 11.2vw;
-  height: 2.93vw;
-  line-height: 2.93vw;
+  marginLeft: 0.53rpx;
+  width: 11.2rpx;
+  height: 2.93rpx;
+  lineHeight: 2.93rpx;
   white-space: nowrap;
   color: #ffffff;
-  font-size: 2.4vw;
-  font-weight: 400;
+  fontSize: 2.4rpx;
+  fontWeight: 400;
 }
 
 .main {
@@ -72,20 +72,20 @@
   flex-direction: row;
   justify-content: center;
   background-color: #ffffff;
-  width: 45.6vw;
-  height: 15.2vw;
+  width: 45.6rpx;
+  height: 15.2rpx;
 }
 
 .title {
-  margin-top: 2.93vw;
-  width: 40vw;
-  height: 11.73vw;
+  marginTop: 2.93rpx;
+  width: 40rpx;
+  height: 11.73rpx;
   overflow: hidden;
   text-overflow: ellipsis;
-  line-height: 5.87vw;
+  lineHeight: 5.87rpx;
   color: #333333;
-  font-size: 4vw;
-  font-weight: 400;
+  fontSize: 4rpx;
+  fontWeight: 400;
 }
 
 .ft {
@@ -94,13 +94,13 @@
   align-items: center;
   flex-direction: row;
   justify-content: space-between;
-  border-bottom-left-radius: 1.6vw;
-  border-bottom-right-radius: 1.6vw;
+  borderBottomLeftRadius: 1.6rpx;
+  borderBottomRightRadius: 1.6rpx;
   background-color: #ffffff;
-  padding-right: 2.27vw;
-  padding-left: 2.4vw;
-  width: 45.6vw;
-  height: 10.4vw;
+  paddingRight: 2.27rpx;
+  paddingLeft: 2.4rpx;
+  width: 45.6rpx;
+  height: 10.4rpx;
   overflow: hidden;
 }
 
@@ -108,40 +108,40 @@
   display: flex;
   align-items: center;
   flex-direction: row;
-  height: 4vw;
+  height: 4rpx;
 }
 
 .xianjin {
-  width: 4vw;
-  height: 4vw;
+  width: 4rpx;
+  height: 4rpx;
 }
 
 .fashionHome {
-  margin-left: 0.8vw;
-  line-height: 3.73vw;
+  marginLeft: 0.8rpx;
+  lineHeight: 3.73rpx;
   white-space: nowrap;
   color: #666666;
-  font-size: 3.2vw;
-  font-weight: 300;
+  fontSize: 3.2rpx;
+  fontWeight: 300;
 }
 
 .group {
   display: flex;
   align-items: center;
   flex-direction: row;
-  height: 4vw;
+  height: 4rpx;
 }
 
 .favorite {
-  width: 2.93vw;
-  height: 2.93vw;
+  width: 2.93rpx;
+  height: 2.93rpx;
 }
 
 .num {
-  margin-left: 0.67vw;
-  line-height: 3.47vw;
+  marginLeft: 0.67rpx;
+  lineHeight: 3.47rpx;
   white-space: nowrap;
   color: #999999;
-  font-size: 2.93vw;
-  font-weight: 400;
+  fontSize: 2.93rpx;
+  fontWeight: 400;
 }

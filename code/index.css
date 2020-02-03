@@ -42,10 +42,10 @@
   left: 18px;
   align-items: center;
   flex-direction: row;
-  border-radius: 15px;
+  borderRadius: 15px;
   background-color: rgba(0, 0, 0, 0.4);
-  padding-right: 9px;
-  padding-left: 10px;
+  paddingRight: 9px;
+  paddingLeft: 10px;
   height: 30px;
 }
 
@@ -56,14 +56,14 @@
 }
 
 .distance {
-  margin-left: 4px;
+  marginLeft: 4px;
   width: 84px;
   height: 22px;
-  line-height: 22px;
+  lineHeight: 22px;
   white-space: nowrap;
   color: #ffffff;
-  font-size: 18px;
-  font-weight: 400;
+  fontSize: 18px;
+  fontWeight: 400;
 }
 
 .main {
@@ -77,15 +77,15 @@
 }
 
 .title {
-  margin-top: 22px;
+  marginTop: 22px;
   width: 300px;
   height: 88px;
   overflow: hidden;
   text-overflow: ellipsis;
-  line-height: 44px;
+  lineHeight: 44px;
   color: #333333;
-  font-size: 30px;
-  font-weight: 400;
+  fontSize: 30px;
+  fontWeight: 400;
 }
 
 .ft {
@@ -94,11 +94,11 @@
   align-items: center;
   flex-direction: row;
   justify-content: space-between;
-  border-bottom-left-radius: 12px;
-  border-bottom-right-radius: 12px;
+  borderBottomLeftRadius: 12px;
+  borderBottomRightRadius: 12px;
   background-color: #ffffff;
-  padding-right: 17px;
-  padding-left: 18px;
+  paddingRight: 17px;
+  paddingLeft: 18px;
   width: 342px;
   height: 78px;
   overflow: hidden;
@@ -117,12 +117,12 @@
 }
 
 .fashionHome {
-  margin-left: 6px;
-  line-height: 28px;
+  marginLeft: 6px;
+  lineHeight: 28px;
   white-space: nowrap;
   color: #666666;
-  font-size: 24px;
-  font-weight: 300;
+  fontSize: 24px;
+  fontWeight: 300;
 }
 
 .group {
@@ -138,10 +138,10 @@
 }
 
 .num {
-  margin-left: 5px;
-  line-height: 26px;
+  marginLeft: 5px;
+  lineHeight: 26px;
   white-space: nowrap;
   color: #999999;
-  font-size: 22px;
-  font-weight: 400;
+  fontSize: 22px;
+  fontWeight: 400;
 }

@@ -28,6 +28,19 @@
 <script>
 import { fetch } from 'whatwg-fetch';
 export default {
+  name: 'HmUniAppComponent',
+  props: {
+    dataId: {
+      type: String,
+      default: 'hm-uni-app-component'
+    },
+    options: {
+      type: Object,
+      default: function() {
+        return {};
+      }
+    }
+  },
   data() {
     return {
       stateData: 'test',

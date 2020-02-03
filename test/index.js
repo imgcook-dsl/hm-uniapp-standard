@@ -34,10 +34,7 @@ co(function*() {
   });
 
   if (renderInfo.noTemplate) {
-    console.log('noTemplate');
     renderInfo.panelDisplay.forEach((file) => {
-      console.log(`panelName: ${file.panelName}`);
-      console.log(`file.panelValue: ${file.panelValue}`);
       fs.writeFileSync(path.join(__dirname, `../code/${file.panelName}`), file.panelValue);
     });
   } else {
@@ -55,8 +52,6 @@ co(function*() {
     };
 
     const prettierRes = prettier.format(ret, prettierOpt);
-
-    console.log(prettierRes);
 
     fs.writeFileSync(path.join(__dirname,'../code/result.vue'), prettierRes);
   }
