@@ -1,14 +1,22 @@
 <template>
-    <view :id="dataId">
-    {{{template}}}
-    </view>
+{{{template}}}
 </template>
 
 <script>
-    {{{mockDataScript}}}
-    {{{script}}}
+{{{imports}}}
+export default {
+    data() {
+       return {
+           {{{datas.join(',')}}}
+       } 
+    },
+    methods: {
+        {{{methods.join(',')}}}
+    },
+    {{{lifeCycles.join(',')}}}
+}
 </script>
 
-<style lang="less" scoped>
-    {{{style}}}
+<style scoped>
+    {{{styles.join('\n')}}}
 </style>
