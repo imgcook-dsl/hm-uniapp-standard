@@ -161,8 +161,8 @@ module.exports = function(schema, option) {
 
     switch (action) {
       case 'fetch':
-        if (imports.indexOf(`import {request} from '@/common/request'`) === -1) {
-          imports.push(`import {request} from '@/common/request'`);
+        if (imports.indexOf(`import {request, fetch} from '@/common/request'`) === -1) {
+          imports.push(`import {request, fetch} from '@/common/request'`);
         }
         payload = {
           method: method
