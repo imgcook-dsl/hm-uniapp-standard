@@ -26,7 +26,7 @@
   </div>
 </template>
 <script>
-import { fetch } from 'whatwg-fetch';
+import { request } from '@/common/request';
 export default {
   name: 'HmUniAppComponent',
   props: {
