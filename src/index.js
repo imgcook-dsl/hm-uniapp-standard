@@ -450,7 +450,9 @@ module.exports = function(schema, option) {
               ${lifeCycles.join(',\n')}
             }
           </script>
-          <style src="./index.response.css" />
+          <style>
+          @import "./index.response.css";
+          </style>
         `, prettierOpt),
         panelType: 'vue',
       },
