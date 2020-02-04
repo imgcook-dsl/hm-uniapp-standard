@@ -46,10 +46,11 @@ module.exports = function(schema, option) {
   const width = option.responsive.width || 750;
   const viewportWidth = option.responsive.viewportWidth || 375;
 
-  // 1vw = width / 100
-  const _w = ( width / 100);
-
+  // 1rpx = 750 / width
+  const _w = ( 750 / width);
+  console.log(`_w: ${_w}`);
   const _ratio = width / viewportWidth;
+  console.log(`_ratio: ${_ratio}`);
 
   const isExpression = (value) => {
     return /^\{\{.*\}\}$/.test(value);
