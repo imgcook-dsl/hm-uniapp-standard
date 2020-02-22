@@ -43,14 +43,15 @@ module.exports = function(schema, option) {
     'componentWillUnmount': 'beforeDestroy'
   }
 
-  const width = option.responsive.width || 750;
-  const viewportWidth = option.responsive.viewportWidth || 375;
+  // console.log('schema.rect.width: ', schema.rect.width);
+  const width = schema.rect.width || 750;
+  // const viewportWidth = option.responsive.viewportWidth || 750;
 
-  // 1rpx = 750 / width
+  // 1rpx = width / 750 px
   const _w = ( 750 / width);
   console.log(`_w: ${_w}`);
-  const _ratio = width / viewportWidth;
-  console.log(`_ratio: ${_ratio}`);
+  // const _ratio = width / width;
+  // console.log(`_ratio: ${_ratio}`);
 
   const isExpression = (value) => {
     return /^\{\{.*\}\}$/.test(value);
@@ -87,7 +88,7 @@ module.exports = function(schema, option) {
       let value = style[key];
       if (boxStyleList.indexOf(key) != -1) {
         if (toVW) {
-          value = (parseInt(value) / _w).toFixed(2);
+          value = (parseInt(value) * _w).toFixed(2);
           value = value == 0 ? value : value + 'rpx';
         } else {
           value = (parseInt(value)).toFixed(2);
