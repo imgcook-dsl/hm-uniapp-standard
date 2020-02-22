@@ -13,7 +13,7 @@ module.exports = function(schema, option) {
   // data
   const datas = [];
 
-  const constants = {};
+  const defaultProps = {};
 
   // methods
   const methods = [];
@@ -119,6 +119,7 @@ module.exports = function(schema, option) {
 
   // parse layer props(static values or expression)
   const parseProps = (value, isReactNode, constantName) => {
+    console.log(`parseProps:`, value, isReactNode, constantName);
     if (typeof value === 'string') {
       if (isExpression(value)) {
         if (isReactNode) {
@@ -131,10 +132,10 @@ module.exports = function(schema, option) {
       if (isReactNode) {
         return value;
       } else if (constantName) { // save to constant
-        expressionName[constantName] = expressionName[constantName] ? expressionName[constantName] + 1 : 1;
-        const name = `${constantName}${expressionName[constantName]}`;
-        constants[name] = value;
-        return `"constants.${name}"`;
+        // expressionName[constantName] = expressionName[constantName] ? expressionName[constantName] + 1 : 1;
+        // const name = `${constantName}${expressionName[constantName]}`;
+        defaultProps[constantName] = value;
+        return `"defaultProps.${constantName}"`;
       } else {
         return `"${value}"`;
       }
@@ -281,11 +282,11 @@ module.exports = function(schema, option) {
 
     switch(type) {
       case 'text':
-        const innerText = parseProps(schema.props.text, true);
+        const innerText = parseProps(schema.props.text, false, schema.props.className);
         xml = `<span${classString}${props}>${innerText}</span> `;
         break;
       case 'image':
-        const source = parseProps(schema.props.src, false, 'image');
+        const source = parseProps(schema.props.src, false, schema.props.className);
         xml = `<img${classString}${props} :src=${source} /> `;
         break;
       case 'div':
@@ -388,7 +389,8 @@ module.exports = function(schema, option) {
 
   // start parse schema
   transform(schema);
-  datas.push(`constants: ${toString(constants)}`);
+  console.log(`defaultProps: ${JSON.stringify(defaultProps)}`);
+  datas.push(`defaultProps: ${toString(defaultProps)}`);
 
   const prettierOpt = {
     parser: 'vue',
@@ -436,15 +438,12 @@ module.exports = function(schema, option) {
                 options: {
                   type: Object,
                   default: function() {
-                    return {
-                    }
+                    return ${JSON.stringify(defaultProps)}
                   }
                 }
               },
               data() {
-                return {
-                  ${datas.join(',\n')}
-                } 
+                return {}
               },
               methods: {
                 ${methods.join(',\n')}

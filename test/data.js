@@ -81,7 +81,7 @@ module.exports = {
             "overflow": "hidden"
           },
           "src": "https://ai-sample.oss-cn-hangzhou.aliyuncs.com/test/47f5f060557b11eabde03dd163252f26.png",
-          "className": "bd"
+          "className": "img"
         }
       }, {
         "componentName": "Text",
@@ -111,7 +111,7 @@ module.exports = {
             "fontWeight": "normal"
           },
           "text": "Quick Brown Fox Jumps Over",
-          "className": "main"
+          "className": "title"
         }
       }, {
         "componentName": "Div",
@@ -155,7 +155,7 @@ module.exports = {
               "fontWeight": "normal"
             },
             "text": "TRAVELLING",
-            "className": "travelling"
+            "className": "author"
           }
         }, {
           "componentName": "Text",
@@ -181,7 +181,7 @@ module.exports = {
               "fontWeight": "normal"
             },
             "text": "16 MAY 2016",
-            "className": "may"
+            "className": "date"
           }
         }]
       }, {
@@ -212,7 +212,7 @@ module.exports = {
             "fontWeight": "normal"
           },
           "text": "Synth polaroid bitters chillwave pickled. Vegandisrupt tousled, Portland keffiyeh aesthetic food",
-          "className": "row"
+          "className": "summary"
         }
       }, {
         "componentName": "Div",
