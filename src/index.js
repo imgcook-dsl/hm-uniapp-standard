@@ -429,11 +429,11 @@ module.exports = function(schema, option) {
           <script>
             ${imports.join('\n')}
             export default {
-              name: 'HmUniAppDemoComponent',
+              name: '${_.upperFirst(_.camelCase(schema.props.className))}',
               props: {
                 dataId: {
                   type: String,
-                  default: "hm-uni-app-demo-component"
+                  default: '${schema.props.className}'
                 },
                 options: {
                   type: Object,

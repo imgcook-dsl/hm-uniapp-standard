@@ -8,6 +8,7 @@
 
 在imgcook的web编辑器/IDE编辑器中，需要注意以下事项：
 
+* 组件的名称由imgcook中的page的className决定，className需设置为kebab-case，例如：hm-news-card
 * 为了降低生成的组件，在xmind2code中进一步生成代码时产生过多冗余，组件除'dataId'之外的属性，全部放到options对象中。见下面的示例。
 * image/text的className将会设置为 props.options.className。例如：
 
@@ -35,3 +36,7 @@ props: {
   }
 },
 ```
+
+## 示例
+
+* [毫末mobile新闻卡片](https://www.imgcook.com/editor#/?id=22726)

@@ -17,7 +17,7 @@ module.exports = {
       "width": "375px",
       "height": "387px"
     },
-    "className": "block"
+    "className": "hm-news-card"
   },
   "children": [{
     "componentName": "Div",
