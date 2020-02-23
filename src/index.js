@@ -130,12 +130,13 @@ module.exports = function(schema, option) {
       }
 
       if (isReactNode) {
-        return value;
+        defaultProps[constantName] = value;
+        return `{{options.${constantName}}}`;
       } else if (constantName) { // save to constant
         // expressionName[constantName] = expressionName[constantName] ? expressionName[constantName] + 1 : 1;
         // const name = `${constantName}${expressionName[constantName]}`;
         defaultProps[constantName] = value;
-        return `"defaultProps.${constantName}"`;
+        return `"options.${constantName}"`;
       } else {
         return `"${value}"`;
       }
@@ -282,7 +283,8 @@ module.exports = function(schema, option) {
 
     switch(type) {
       case 'text':
-        const innerText = parseProps(schema.props.text, false, schema.props.className);
+        const innerText = parseProps(schema.props.text, true, schema.props.className);
+        console.log(`innerText: ${innerText}`)
         xml = `<span${classString}${props}>${innerText}</span> `;
         break;
       case 'image':
