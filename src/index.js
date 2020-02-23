@@ -94,9 +94,11 @@ module.exports = function(schema, option) {
           value = (parseInt(value)).toFixed(2);
           value = value == 0 ? value : value + 'px';
         }
+        console.log('key: ', key, value);
         styleData.push(`${_.kebabCase(key)}: ${value}`);
       } else if (noUnitStyles.indexOf(key) != -1) {
-        styleData.push(`${_.kebabCase(key)}: ${parseFloat(value)}`);
+        console.log('key: ', key, value);
+        styleData.push(`${_.kebabCase(key)}: ${isNaN(parseFloat(value)) ? value : parseFloat(value) }`);
       } else {
         styleData.push(`${_.kebabCase(key)}: ${value}`);
       }
