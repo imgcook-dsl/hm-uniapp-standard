@@ -1,54 +1,73 @@
 module.exports = {
   "componentName": "Page",
-  "id": "Block_85296",
+  "id": "Shape_0",
+  "selfId": "95BB8A39-4410-41D3-8F1C-4A0B4F90E90E",
   "rect": {
     "x": 0,
     "y": 0,
     "width": 375,
-    "height": 387
+    "height": 614
   },
   "smart": {},
   "props": {
     "style": {
       "display": "flex",
-      "alignItems": "center",
-      "flexDirection": "row",
-      "justifyContent": "center",
+      "alignItems": "flex-start",
+      "flexDirection": "column",
+      "backgroundColor": "#ffffff",
       "width": "375px",
-      "height": "387px"
+      "height": "614px"
     },
-    "className": "hm-news-card"
+    "className": "hm-news-detail"
   },
   "children": [{
     "componentName": "Div",
-    "id": "Shape_0",
-    "selfId": "2BFA7B36-867F-4FAC-99A7-549FB80C1EC2",
+    "id": "Block_984156",
     "rect": {
-      "x": 14,
-      "y": 9,
-      "width": 347,
-      "height": 368
+      "x": 0,
+      "y": 26,
+      "width": 374,
+      "height": 38
     },
     "smart": {},
     "props": {
       "style": {
         "display": "flex",
-        "alignItems": "flex-start",
         "flexDirection": "row",
-        "height": "368px",
-        "boxShadow": "0px 2px 4px rgba(0, 0, 0, 0.50)"
+        "justifyContent": "center",
+        "marginTop": "26px",
+        "width": "374px"
       },
-      "className": "container"
+      "className": "hd"
     },
     "children": [{
-      "componentName": "Div",
-      "id": "Shape_1",
-      "selfId": "C03440CF-BD13-4398-BF65-C68B1CB97A62",
+      "componentName": "Image",
+      "id": "Image_3",
+      "selfId": "4AA31BF1-1B8F-420B-A8F8-15744704D491",
       "rect": {
-        "x": 15,
-        "y": 9,
-        "width": 346,
-        "height": 368
+        "x": 34,
+        "y": 26,
+        "width": 38,
+        "height": 38
+      },
+      "smart": {},
+      "props": {
+        "style": {
+          "width": "38px",
+          "height": "38px",
+          "filter": "drop-shadow(0px 0px 20px rgba(0, 0, 0, 0.09))"
+        },
+        "src": "https://ai-sample.oss-cn-hangzhou.aliyuncs.com/test/e8691a80583311ea9fc8bd65d7cec1a5.png",
+        "className": "yunshu"
+      }
+    }, {
+      "componentName": "Div",
+      "id": "Block_918358",
+      "rect": {
+        "x": 82,
+        "y": 26,
+        "width": 254,
+        "height": 38
       },
       "smart": {},
       "props": {
@@ -56,264 +75,293 @@ module.exports = {
           "display": "flex",
           "alignItems": "flex-start",
           "flexDirection": "column",
-          "backgroundColor": "#ffffff",
-          "width": "346px",
-          "height": "368px",
-          "filter": "drop-shadow(0px 1px 6px 1px rgba(0, 0, 0, 0.05))"
+          "marginLeft": "10px",
+          "height": "38px"
         },
-        "className": "box"
+        "className": "container"
       },
       "children": [{
-        "componentName": "Image",
-        "id": "Image_6",
-        "selfId": "BA5673B5-A964-4A1C-8169-5584852AC368",
+        "componentName": "Div",
+        "id": "Block_537752",
         "rect": {
-          "x": 15,
-          "y": 9,
-          "width": 346,
-          "height": 189
+          "x": 82,
+          "y": 27,
+          "width": 255,
+          "height": 23
         },
         "smart": {},
         "props": {
           "style": {
-            "width": "346px",
-            "height": "189px",
-            "overflow": "hidden"
+            "display": "flex",
+            "alignItems": "center",
+            "flexDirection": "row",
+            "justifyContent": "space-between",
+            "marginTop": "1px",
+            "width": "255px",
+            "height": "23px"
           },
-          "src": "https://ai-sample.oss-cn-hangzhou.aliyuncs.com/test/47f5f060557b11eabde03dd163252f26.png",
-          "className": "img"
-        }
+          "className": "outer"
+        },
+        "children": [{
+          "componentName": "Text",
+          "id": "Text_2_0",
+          "selfId": "7AF7F8AC-DF3B-4894-A243-0ED7834F9A120",
+          "rect": {
+            "x": 82,
+            "y": 27,
+            "width": 64,
+            "height": 22
+          },
+          "smart": {},
+          "props": {
+            "style": {
+              "maxWidth": "184px",
+              "height": "22px",
+              "overflow": "hidden",
+              "textOverflow": "ellipsis",
+              "lineHeight": "22px",
+              "whiteSpace": "nowrap",
+              "color": "#000000",
+              "fontSize": "16px",
+              "fontWeight": 400
+            },
+            "text": "毫末科技",
+            "className": "author"
+          }
+        }, {
+          "componentName": "Div",
+          "id": "Block_472605",
+          "rect": {
+            "x": 276,
+            "y": 27,
+            "width": 59,
+            "height": 17
+          },
+          "smart": {},
+          "props": {
+            "style": {
+              "display": "flex",
+              "alignItems": "flex-start",
+              "flexDirection": "row",
+              "marginTop": "6px",
+              "height": "17px"
+            },
+            "className": "wrap"
+          },
+          "children": [{
+            "componentName": "Image",
+            "id": "Image_5",
+            "selfId": "4D48BFBA-2BEF-4D87-8C9F-4DDEE53299B4",
+            "rect": {
+              "x": 276,
+              "y": 33,
+              "width": 19,
+              "height": 17
+            },
+            "smart": {},
+            "props": {
+              "style": {
+                "opacity": 0.5,
+                "width": "19px",
+                "height": "17px"
+              },
+              "src": "https://ai-sample.oss-cn-hangzhou.aliyuncs.com/test/e8918a10583311eabb555f2886f52e85.png",
+              "className": "like"
+            }
+          }, {
+            "componentName": "Image",
+            "id": "Image_6",
+            "selfId": "9C0B1CBD-4505-4A69-B70C-5E21BBA61CCE",
+            "rect": {
+              "x": 321,
+              "y": 34,
+              "width": 15,
+              "height": 15
+            },
+            "smart": {},
+            "props": {
+              "style": {
+                "opacity": 0.5,
+                "marginLeft": "26px",
+                "width": "15px",
+                "height": "15px"
+              },
+              "src": "https://ai-sample.oss-cn-hangzhou.aliyuncs.com/test/e8bc1c80583311ea8651ad80c1bd5775.png",
+              "className": "share"
+            }
+          }]
+        }]
       }, {
         "componentName": "Text",
-        "id": "Text_10_0",
-        "selfId": "B2A36D09-F59C-4F16-8FDE-E7DB1403AFBB0",
+        "id": "Text_4_0",
+        "selfId": "86260F5B-086D-4468-8FA1-04EC9A21019D0",
         "rect": {
-          "x": 34,
-          "y": 211,
-          "width": 232,
-          "height": 22
-        },
-        "smart": {},
-        "props": {
-          "style": {
-            "marginTop": "13px",
-            "marginLeft": "19px",
-            "maxWidth": "315px",
-            "height": "22px",
-            "overflow": "hidden",
-            "textOverflow": "ellipsis",
-            "lineHeight": "22px",
-            "letterSpacing": "0px",
-            "whiteSpace": "pre",
-            "color": "#030303",
-            "fontFamily": "Helvetica",
-            "fontSize": "18px",
-            "fontWeight": "normal"
-          },
-          "text": "Quick Brown Fox Jumps Over",
-          "className": "title"
-        }
-      }, {
-        "componentName": "Div",
-        "id": "Block_909440",
-        "rect": {
-          "x": 15,
-          "y": 240,
-          "width": 345,
+          "x": 82,
+          "y": 50,
+          "width": 76,
           "height": 14
         },
         "smart": {},
         "props": {
           "style": {
-            "display": "flex",
-            "flexDirection": "row",
-            "marginTop": "7px"
-          },
-          "className": "submain"
-        },
-        "children": [{
-          "componentName": "Text",
-          "id": "Text_8_0",
-          "selfId": "17BD29AB-6465-4186-B4A1-76C858E829750",
-          "rect": {
-            "x": 34,
-            "y": 240,
-            "width": 75,
-            "height": 14
-          },
-          "smart": {},
-          "props": {
-            "style": {
-              "marginLeft": "19px",
-              "width": "75px",
-              "height": "14px",
-              "lineHeight": "14px",
-              "whiteSpace": "nowrap",
-              "color": "#b8e986",
-              "fontFamily": "Helvetica",
-              "fontSize": "12px",
-              "fontWeight": "normal"
-            },
-            "text": "TRAVELLING",
-            "className": "author"
-          }
-        }, {
-          "componentName": "Text",
-          "id": "Text_9_0",
-          "selfId": "A53D00B0-9B80-4744-9E33-05810B8FB32C0",
-          "rect": {
-            "x": 123,
-            "y": 240,
-            "width": 73,
-            "height": 14
-          },
-          "smart": {},
-          "props": {
-            "style": {
-              "marginLeft": "14px",
-              "width": "73px",
-              "height": "14px",
-              "lineHeight": "14px",
-              "whiteSpace": "pre",
-              "color": "#c7c7cd",
-              "fontFamily": "Helvetica",
-              "fontSize": "12px",
-              "fontWeight": "normal"
-            },
-            "text": "16 MAY 2016",
-            "className": "date"
-          }
-        }]
-      }, {
-        "componentName": "Text",
-        "id": "Text_7_0",
-        "selfId": "003D506E-F811-4CC6-AE12-2431BA2C1A630",
-        "rect": {
-          "x": 34,
-          "y": 262,
-          "width": 277,
-          "height": 44
-        },
-        "smart": {},
-        "props": {
-          "style": {
-            "marginTop": "8px",
-            "marginLeft": "19px",
-            "width": "277px",
-            "height": "44px",
+            "opacity": "0.60",
+            "maxWidth": "280px",
+            "height": "14px",
             "overflow": "hidden",
             "textOverflow": "ellipsis",
-            "lineHeight": "22px",
-            "letterSpacing": "0px",
-            "whiteSpace": "pre-wrap",
-            "color": "#8f8e94",
+            "lineHeight": "14px",
+            "whiteSpace": "pre",
+            "color": "#000000",
             "fontFamily": "Helvetica",
-            "fontSize": "14px",
+            "fontSize": "12px",
             "fontWeight": "normal"
           },
-          "text": "Synth polaroid bitters chillwave pickled. Vegandisrupt tousled, Portland keffiyeh aesthetic food",
-          "className": "summary"
+          "text": "2 minutes ago",
+          "className": "time"
         }
-      }, {
-        "componentName": "Div",
-        "id": "Shape_2",
-        "selfId": "2F3115FE-B310-49D6-A4BB-3B2072270DC0",
-        "rect": {
-          "x": 15,
-          "y": 327,
-          "width": 346,
-          "height": 4
-        },
-        "smart": {},
-        "props": {
-          "style": {
-            "display": "flex",
-            "marginTop": "21px",
-            "borderTopWidth": "1px",
-            "borderTopStyle": "solid",
-            "borderTopColor": "rgba(239, 239, 244, 1.00)",
-            "width": "346px",
-            "height": "4px"
-          },
-          "className": "row_2"
-        }
-      }, {
-        "componentName": "Div",
-        "id": "Block_324605",
-        "rect": {
-          "x": 15,
-          "y": 345,
-          "width": 346,
-          "height": 12
-        },
-        "smart": {},
-        "props": {
-          "style": {
-            "boxSizing": "border-box",
-            "display": "flex",
-            "flexDirection": "row",
-            "justifyContent": "space-between",
-            "marginTop": "14px",
-            "paddingRight": "24px",
-            "paddingLeft": "20px",
-            "width": "346px"
-          },
-          "className": "ft"
-        },
-        "children": [{
-          "componentName": "Text",
-          "id": "Text_3_0",
-          "selfId": "9AD31DE9-9152-46EE-8C51-2DE1AC969C420",
-          "rect": {
-            "x": 35,
-            "y": 345,
-            "width": 91,
-            "height": 12
-          },
-          "smart": {},
-          "props": {
-            "style": {
-              "width": "91px",
-              "height": "12px",
-              "lineHeight": "12px",
-              "letterSpacing": "1.67px",
-              "whiteSpace": "pre",
-              "color": "#8f8e94",
-              "fontFamily": "Helvetica",
-              "fontSize": "10px",
-              "fontWeight": "normal"
-            },
-            "text": "14 COMMENTS",
-            "className": "comments"
-          }
-        }, {
-          "componentName": "Text",
-          "id": "Text_4_0",
-          "selfId": "C534D140-875D-473D-B268-D10C621B72770",
-          "rect": {
-            "x": 273,
-            "y": 345,
-            "width": 63,
-            "height": 12
-          },
-          "smart": {},
-          "props": {
-            "style": {
-              "width": "63px",
-              "height": "12px",
-              "lineHeight": "12px",
-              "letterSpacing": "1.67px",
-              "whiteSpace": "pre",
-              "color": "#8f8e94",
-              "fontFamily": "Helvetica",
-              "fontSize": "10px",
-              "fontWeight": "normal"
-            },
-            "text": "254 LIKES",
-            "className": "likes"
-          }
-        }]
       }]
+    }]
+  }, {
+    "componentName": "Text",
+    "id": "Text_7_0",
+    "selfId": "0F06E0CA-3571-427E-AE80-C361B19A2A020",
+    "rect": {
+      "x": 34,
+      "y": 82,
+      "width": 256,
+      "height": 50
+    },
+    "smart": {},
+    "props": {
+      "style": {
+        "marginTop": "18px",
+        "marginLeft": "34px",
+        "width": "256px",
+        "height": "50px",
+        "overflow": "hidden",
+        "textOverflow": "ellipsis",
+        "lineHeight": "25px",
+        "whiteSpace": "pre-wrap",
+        "color": "#000000",
+        "fontSize": "18px",
+        "fontWeight": 400
+      },
+      "text": "如何用 Python 在笔记本上分析100GB 数据",
+      "className": "title"
+    }
+  }, {
+    "componentName": "Div",
+    "id": "Block_210255",
+    "rect": {
+      "x": 0,
+      "y": 140,
+      "width": 374,
+      "height": 184
+    },
+    "smart": {},
+    "props": {
+      "style": {
+        "display": "flex",
+        "flexDirection": "row",
+        "justifyContent": "center",
+        "marginTop": "8px",
+        "width": "374px"
+      },
+      "className": "main"
+    },
+    "children": [{
+      "componentName": "Div",
+      "id": "Block_244597",
+      "rect": {
+        "x": 16,
+        "y": 140,
+        "width": 343,
+        "height": 184
+      },
+      "smart": {},
+      "props": {
+        "style": {
+          "display": "flex",
+          "position": "relative",
+          "alignItems": "center",
+          "flexDirection": "row",
+          "justifyContent": "center",
+          "width": "343px",
+          "height": "184px"
+        },
+        "className": "entryPicWrap"
+      },
+      "children": [{
+        "componentName": "Image",
+        "id": "Image_9",
+        "selfId": "28DC7EA1-74F2-40DD-BE52-89B2DB3AA10E",
+        "rect": {
+          "x": 16,
+          "y": 140,
+          "width": 343,
+          "height": 184
+        },
+        "smart": {},
+        "props": {
+          "style": {
+            "position": "relative",
+            "width": "343px",
+            "height": "184px",
+            "filter": "drop-shadow(0px 0px 20px rgba(0, 0, 0, 0.05))"
+          },
+          "src": "https://ai-sample.oss-cn-hangzhou.aliyuncs.com/test/ea36ae90583311eaa48ec157efa466c6.png",
+          "className": "img"
+        },
+        "condition": true
+      }]
+    }]
+  }, {
+    "componentName": "Div",
+    "id": "Block_485340",
+    "rect": {
+      "x": 0,
+      "y": 349,
+      "width": 374,
+      "height": 248
+    },
+    "smart": {},
+    "props": {
+      "style": {
+        "display": "flex",
+        "flexDirection": "row",
+        "justifyContent": "center",
+        "marginTop": "25px",
+        "width": "374px"
+      },
+      "className": "ft"
+    },
+    "children": [{
+      "componentName": "Text",
+      "id": "Text_8_0",
+      "selfId": "99CFCEB0-E59D-4137-A519-1B3AB4B027480",
+      "rect": {
+        "x": 18,
+        "y": 349,
+        "width": 335,
+        "height": 248
+      },
+      "smart": {},
+      "props": {
+        "style": {
+          "width": "335px",
+          "height": "248px",
+          "overflow": "hidden",
+          "textOverflow": "ellipsis",
+          "lineHeight": "31px",
+          "letterSpacing": "0px",
+          "whiteSpace": "pre-wrap",
+          "color": "#000000",
+          "fontSize": "18px",
+          "fontWeight": 400
+        },
+        "text": "第 1 种是对数据进行子抽样，但它有一个明显缺点：可能因忽略部分数据而错失关键信息，甚至误解数据表达的含义。第 2 种是使用分布式计算。虽然在某些情况下这是一种有效的方法，但是管理和维护集群会带来巨大开销。想象一下，要为一个刚超出内存大小、大概 30-50GB 的数据集就建立一套集群，对我来说，这似乎有点“用力过猛”。",
+        "className": "content"
+      }
     }]
   }],
   "fileName": "index"
