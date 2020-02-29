@@ -279,7 +279,7 @@ module.exports = function(schema, option) {
     let props = '';
 
     Object.keys(schema.props).forEach((key) => {
-      if (['className', 'style', 'text', 'src'].indexOf(key) === -1) {
+      if (['className', 'style', 'text', 'src', 'hm-component'].indexOf(key) === -1) {
         props += ` ${parsePropsKey(key, schema.props[key])}="${parseProps(schema.props[key])}"`;
       }
     })
@@ -298,10 +298,14 @@ module.exports = function(schema, option) {
       case 'page':
       case 'block':
       case 'component':
-        if (schema.children && schema.children.length) {
-          xml = `<div${classString}${props}>${transform(schema.children)}</div>`;
+        if (schema.props['hm-component']) {
+          xml = `{{"hm-component=${schema.props['hm-component']}"}}`
         } else {
-          xml = `<div${classString}${props} />`;
+          if (schema.children && schema.children.length) {
+            xml = `<div${classString}${props}>${transform(schema.children)}</div>`;
+          } else {
+            xml = `<div${classString}${props} />`;
+          }
         }
         break;
     }
