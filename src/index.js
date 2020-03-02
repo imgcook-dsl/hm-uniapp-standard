@@ -53,6 +53,11 @@ module.exports = function(schema, option) {
   // const _ratio = width / width;
   // console.log(`_ratio: ${_ratio}`);
 
+  // 如果组件配置了属性responsive==vw，则返回true
+  const isResponsiveVW = () => {
+    return schema.props.responsive == 'vw';
+  }
+
   const isExpression = (value) => {
     return /^\{\{.*\}\}$/.test(value);
   }
@@ -87,12 +92,17 @@ module.exports = function(schema, option) {
     for (let key in style) {
       let value = style[key];
       if (boxStyleList.indexOf(key) != -1) {
-        if (toVW) {
+        if (isResponsiveVW()) {
           value = (parseInt(value) * _w).toFixed(2);
-          value = value == 0 ? value : value + 'rpx';
+          value = value == 0 ? value : (value*100/750).toFixed(2) + 'vw';
         } else {
-          value = (parseInt(value)).toFixed(2);
-          value = value == 0 ? value : value + 'px';
+          if (toVW) {
+            value = (parseInt(value) * _w).toFixed(2);
+            value = value == 0 ? value : value + 'rpx';
+          } else {
+            value = (parseInt(value)).toFixed(2);
+            value = value == 0 ? value : value + 'px';
+          }
         }
         console.log('key: ', key, value);
         styleData.push(`${_.kebabCase(key)}: ${value}`);
@@ -279,7 +289,7 @@ module.exports = function(schema, option) {
     let props = '';
 
     Object.keys(schema.props).forEach((key) => {
-      if (['className', 'style', 'text', 'src', 'hm-component'].indexOf(key) === -1) {
+      if (['className', 'style', 'text', 'src', 'hm-component', 'responsive'].indexOf(key) === -1) {
         props += ` ${parsePropsKey(key, schema.props[key])}="${parseProps(schema.props[key])}"`;
       }
     })
