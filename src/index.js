@@ -104,10 +104,8 @@ module.exports = function(schema, option) {
             value = value == 0 ? value : value + 'px';
           }
         }
-        console.log('key: ', key, value);
         styleData.push(`${_.kebabCase(key)}: ${value}`);
       } else if (noUnitStyles.indexOf(key) != -1) {
-        console.log('key: ', key, value);
         styleData.push(`${_.kebabCase(key)}: ${isNaN(parseFloat(value)) ? value : parseFloat(value) }`);
       } else {
         styleData.push(`${_.kebabCase(key)}: ${value}`);
@@ -131,7 +129,6 @@ module.exports = function(schema, option) {
 
   // parse layer props(static values or expression)
   const parseProps = (value, isReactNode, constantName) => {
-    console.log(`parseProps:`, value, isReactNode, constantName);
     if (typeof value === 'string') {
       if (isExpression(value)) {
         if (isReactNode) {
@@ -226,7 +223,6 @@ module.exports = function(schema, option) {
 
   // parse condition: whether render the layer
   const parseCondition = (condition, render) => {
-    console.log('condition, render: ', condition, render);
     const tagEnd = render.indexOf('>');
     let _condition = isExpression(condition) ? condition.slice(2, -2) : condition;
     _condition = _condition.replace('this.', '');
@@ -299,7 +295,7 @@ module.exports = function(schema, option) {
         const innerText = parseProps(schema.props.text, true, schema.props.className);
         console.log(`innerText: ${innerText}`)
         if (schema.props['hm-component']) {
-          xml = `{{"hm-component=${schema.props['hm-component']}"}}`
+          xml = `<div class="${schema.props.className}">{{"hm-component=${schema.props['hm-component']}"}}</div>`
         } else {
           xml = `<text${classString}${props}>${innerText}</text> `;
         }
@@ -307,7 +303,7 @@ module.exports = function(schema, option) {
       case 'image':
         const source = parseProps(schema.props.src, false, schema.props.className);
         if (schema.props['hm-component']) {
-          xml = `{{"hm-component=${schema.props['hm-component']}"}}`
+          xml = `<div class="${schema.props.className}">{{"hm-component=${schema.props['hm-component']}"}}</div>`
         } else {
           xml = `<image${classString}${props} :src=${source} /> `;
         }
@@ -317,7 +313,7 @@ module.exports = function(schema, option) {
       case 'block':
       case 'component':
         if (schema.props['hm-component']) {
-          xml = `{{"hm-component=${schema.props['hm-component']}"}}`
+          xml = `<div class="${schema.props.className}">{{"hm-component=${schema.props['hm-component']}"}}</div>`
         } else {
           if (schema.children && schema.children.length) {
             xml = `<div${classString}${props}>${transform(schema.children)}</div>`;
@@ -418,7 +414,6 @@ module.exports = function(schema, option) {
 
   // start parse schema
   transform(schema);
-  console.log(`defaultProps: ${JSON.stringify(defaultProps)}`);
   datas.push(`defaultProps: ${toString(defaultProps)}`);
 
   const prettierOpt = {

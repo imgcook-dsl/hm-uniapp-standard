@@ -78,7 +78,8 @@ module.exports = {
           "marginLeft": "10px",
           "height": "38px"
         },
-        "className": "container"
+        "className": "container",
+        "hm-component": "van-field"
       },
       "children": [{
         "componentName": "Div",
