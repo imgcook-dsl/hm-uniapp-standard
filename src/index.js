@@ -298,11 +298,19 @@ module.exports = function(schema, option) {
       case 'text':
         const innerText = parseProps(schema.props.text, true, schema.props.className);
         console.log(`innerText: ${innerText}`)
-        xml = `<text${classString}${props}>${innerText}</text> `;
+        if (schema.props['hm-component']) {
+          xml = `{{"hm-component=${schema.props['hm-component']}"}}`
+        } else {
+          xml = `<text${classString}${props}>${innerText}</text> `;
+        }
         break;
       case 'image':
         const source = parseProps(schema.props.src, false, schema.props.className);
-        xml = `<image${classString}${props} :src=${source} /> `;
+        if (schema.props['hm-component']) {
+          xml = `{{"hm-component=${schema.props['hm-component']}"}}`
+        } else {
+          xml = `<image${classString}${props} :src=${source} /> `;
+        }
         break;
       case 'div':
       case 'page':
