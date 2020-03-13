@@ -293,7 +293,6 @@ module.exports = function(schema, option) {
     switch(type) {
       case 'text':
         const innerText = parseProps(schema.props.text, true, schema.props.className);
-        console.log(`innerText: ${innerText}`)
         if (schema.props['hm-component']) {
           xml = `<div class="${schema.props.className}">{{"hm-component=${schema.props['hm-component']}"}}</div>`
         } else {
