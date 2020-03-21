@@ -48,6 +48,7 @@ module.exports = function(schema, option) {
   // const viewportWidth = option.responsive.viewportWidth || 750;
 
   // 1rpx = width / 750 px
+  let designWidth = schema.props.designWidth || 750;
   const _w = ( 750 / width);
   console.log(`_w: ${_w}`);
   // const _ratio = width / width;
@@ -93,8 +94,8 @@ module.exports = function(schema, option) {
       let value = style[key];
       if (boxStyleList.indexOf(key) != -1) {
         if (isResponsiveVW()) {
-          value = (parseInt(value) * _w).toFixed(2);
-          value = value == 0 ? value : (value*100/750).toFixed(2) + 'vw';
+          value = (parseInt(value)).toFixed(2);
+          value = value == 0 ? value : (value*100/designWidth).toFixed(2) + 'vw';
         } else {
           if (toVW) {
             value = (parseInt(value) * _w).toFixed(2);
@@ -285,7 +286,7 @@ module.exports = function(schema, option) {
     let props = '';
 
     Object.keys(schema.props).forEach((key) => {
-      if (['className', 'style', 'text', 'src', 'hm-component', 'responsive'].indexOf(key) === -1) {
+      if (['className', 'style', 'text', 'src', 'hm-component', 'responsive', 'designWidth'].indexOf(key) === -1) {
         props += ` ${parsePropsKey(key, schema.props[key])}="${parseProps(schema.props[key])}"`;
       }
     })
