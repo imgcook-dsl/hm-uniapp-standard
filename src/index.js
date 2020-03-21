@@ -146,18 +146,18 @@ module.exports = function(schema, option) {
       }
 
       if (isReactNode) {
-        defaultProps[constantName] = value;
+        defaultProps[_.camelCase(constantName)] = value;
         if (constantName.indexOf('-') >= 0) {
-          return `{{state['${constantName}']}}`;
+          return `{{state['${_.camelCase(constantName)}']}}`;
         } else {
-          return `{{state.${constantName}}}`;
+          return `{{state.${_.camelCase(constantName)}}}`;
         }
       } else if (constantName) { // save to constant
-        defaultProps[constantName] = value;
+        defaultProps[_.camelCase(constantName)] = value;
         if (constantName.indexOf('-') >= 0) {
-          return `"state['${constantName}']"`;
+          return `"state['${_.camelCase(constantName)}']"`;
         } else {
-          return `"state.${constantName}"`;
+          return `"state.${_.camelCase(constantName)}"`;
         }
       } else {
         return `"${value}"`;
