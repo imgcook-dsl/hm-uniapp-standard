@@ -488,11 +488,6 @@ module.exports = function(schema, option) {
         panelType: 'vue',
       },
       {
-        panelName: 'index.css',
-        panelValue: prettier.format(`${styles.join('\n')}`, {parser: 'css'}),
-        panelType: 'css'
-      },
-      {
         panelName: 'index.response.css',
         panelValue: prettier.format(styles4vw.join('\n'), {parser: 'css'}),
         panelType: 'css'
