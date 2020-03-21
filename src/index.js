@@ -189,7 +189,6 @@ module.exports = function(schema, option) {
       imports.push(`import {getOne, getAll} from '@/common/request'`);
     }
     payload = {
-      method: method
     };
 
     Object.keys(data.options).forEach((key) => {
@@ -200,11 +199,10 @@ module.exports = function(schema, option) {
 
     // params parse should in string template
     if (params) {
-      payload = `${toString(payload).slice(0, -1)} ,body: ${isExpression(params) ? parseProps(params) : toString(params)}}`;
+      payload = `${isExpression(params) ? parseProps(params) : toString(params)}`;
     } else {
       payload = toString(payload);
     }
-
 
     let result;
     if (action == 'getOne') {

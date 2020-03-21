@@ -289,7 +289,7 @@ module.exports = {
         },
         "uri": "http://hmpos.haomo-tech.com/opencart/oc_api/ocbanner/page"
       },
-      "description": "getOne",
+      "description": "getAll",
       "dataHandler": function dataHandler(data, error) {
         console.log(data)
         return data;
