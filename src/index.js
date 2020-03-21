@@ -147,12 +147,18 @@ module.exports = function(schema, option) {
 
       if (isReactNode) {
         defaultProps[constantName] = value;
-        return `{{options.${constantName}}}`;
+        if (constantName.indexOf('-') >= 0) {
+          return `{{state['${constantName}']}}`;
+        } else {
+          return `{{state.${constantName}}}`;
+        }
       } else if (constantName) { // save to constant
-        // expressionName[constantName] = expressionName[constantName] ? expressionName[constantName] + 1 : 1;
-        // const name = `${constantName}${expressionName[constantName]}`;
         defaultProps[constantName] = value;
-        return `"options.${constantName}"`;
+        if (constantName.indexOf('-') >= 0) {
+          return `"state['${constantName}']"`;
+        } else {
+          return `"state.${constantName}"`;
+        }
       } else {
         return `"${value}"`;
       }
@@ -176,25 +182,15 @@ module.exports = function(schema, option) {
   const parseDataSource = (data) => {
     const name = data.id;
     const {uri, method, params} = data.options;
-    const action = data.type;
+    const action = data.description || 'getOne';
     let payload = {};
 
-    switch (action) {
-      case 'fetch':
-        if (imports.indexOf(`import {request, fetch} from '@/common/request'`) === -1) {
-          imports.push(`import {request, fetch} from '@/common/request'`);
-        }
-        payload = {
-          method: method
-        };
-
-        break;
-      case 'jsonp':
-        if (imports.indexOf(`import {fetchJsonp} from fetch-jsonp`) === -1) {
-          imports.push(`import jsonp from 'fetch-jsonp'`);
-        }
-        break;
+    if (imports.indexOf(`import {getOne, getAll} from '@/common/request'`) === -1) {
+      imports.push(`import {getOne, getAll} from '@/common/request'`);
     }
+    payload = {
+      method: method
+    };
 
     Object.keys(data.options).forEach((key) => {
       if (['uri', 'method', 'params'].indexOf(key) === -1) {
@@ -209,21 +205,30 @@ module.exports = function(schema, option) {
       payload = toString(payload);
     }
 
-    let result = `{
-      ${action}(${parseProps(uri)}, ${toString(payload)})
-        .then((response) => response.json())
-    `;
+
+    let result;
+    if (action == 'getOne') {
+      result = `{
+        ${action}(this.state.url || ${parseProps(uri)})
+          .then((response) => response.data.data.data)`;
+    } else {
+      result = `{
+      ${action}(this.state.url || ${parseProps(uri)}, ${toString(payload)})
+        .then((response) => response.data.data.data.records)`;
+    }
 
     if (data.dataHandler) {
       const { params, content } = parseFunction(data.dataHandler);
-      result += `.then((${params}) => {${content}})
-        .catch((e) => {
-          console.log('error', e);
-        })
-      `
+      result += `.then((${params}) => {${content}})`
     }
 
-    result += '}';
+    result += `.then(data => {
+      this.state = Object.assign(this.state, data);
+    })`
+
+    result += `.catch((e) => {
+      console.log('error', e);
+    })}`;
 
     return `${name}() ${result}`;
   }
@@ -428,26 +433,6 @@ module.exports = function(schema, option) {
     singleQuote: true
   };
 
-  // /**
-  //  * @TODO: 将css转为uni-app的css
-  //  * @param {*} css 
-  //  */
-  // const transformCssToBeUniApp = (css) => {
-  //   console.log('css: ', css);
-  //   let styles = boxStyleList.concat(noUnitStyles);
-  //   console.log('styles: ', styles);
-  //   styles.forEach(style => {
-  //     let kebabCaseStyle = _.kebabCase(style);
-  //     console.log(`kebabCaseStyle: `, kebabCaseStyle);
-  //     if (kebabCaseStyle.indexOf('-') > 0) {
-  //       let re = new RegExp(kebabCaseStyle, 'gm');
-  //       console.log('camelCaseStyle: ', _.camelCase(style));
-  //       css = css.replace(re, _.camelCase(style));
-  //     }
-  //   })
-  //   return css;
-  // };
-
   return {
     panelDisplay: [
       {
@@ -473,7 +458,12 @@ module.exports = function(schema, option) {
                 }
               },
               data() {
-                return {}
+                return {
+                  state: {}
+                }
+              },
+              updated() {
+                this.state = Object.assign({}, this.options);
               },
               methods: {
                 ${methods.join(',\n')}
