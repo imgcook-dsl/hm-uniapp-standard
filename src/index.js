@@ -48,6 +48,7 @@ module.exports = function(schema, option) {
   // const viewportWidth = option.responsive.viewportWidth || 750;
 
   // 1rpx = width / 750 px
+  let existDesignWidth = !!schema.props.designWidth;
   let designWidth = schema.props.designWidth || 750;
   const _w = ( 750 / width);
   console.log(`_w: ${_w}`);
@@ -88,7 +89,7 @@ module.exports = function(schema, option) {
   };
 
   // convert to responsive unit, such as vw
-  const parseStyle = (style, toVW) => {
+  const parseStyle = (style, toRpx) => {
     const styleData = [];
     for (let key in style) {
       let value = style[key];
@@ -97,9 +98,14 @@ module.exports = function(schema, option) {
           value = (parseInt(value)).toFixed(2);
           value = value == 0 ? value : (value*100/designWidth).toFixed(2) + 'vw';
         } else {
-          if (toVW) {
-            value = (parseInt(value) * _w).toFixed(2);
-            value = value == 0 ? value : value + 'rpx';
+          if (toRpx) {
+            if (existDesignWidth) {
+              value = (parseInt(value)).toFixed(2);
+              value = value == 0 ? value : (value*750/designWidth).toFixed(2) + 'rpx';
+            } else {
+              value = (parseInt(value) * _w).toFixed(2);
+              value = value == 0 ? value : value + 'rpx';
+            }
           } else {
             value = (parseInt(value)).toFixed(2);
             value = value == 0 ? value : value + 'px';

@@ -18,8 +18,7 @@ module.exports = {
       "width": "375px",
       "height": "614px"
     },
-    "className": "hm-news-detail",
-    "responsive": "vw",
+    "className": "hm-test-component",
     "designWidth": "1920"
   },
   "children": [{
