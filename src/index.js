@@ -460,7 +460,7 @@ module.exports = function(schema, option) {
                   state: {}
                 }
               },
-              updated() {
+              onLoad() {
                 this.state = Object.assign({}, this.options);
               },
               methods: {
