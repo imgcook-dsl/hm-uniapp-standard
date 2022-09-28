@@ -8,7 +8,7 @@
     "mocha": "^7.0.1",
     "prettier": "^1.11.1",
     "thunkify": "^2.1.2",
-    "vm2": "^3.5.2",
+    "vm2": "^3.9.11",
     "xml-beautifier": "^0.4.0",
     "xtemplate": "^4.6.1",
     "xtpl": "^3.4.0"
